@@ -1,0 +1,34 @@
+---
+name: Deploy safe-settings
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/safe-settings/deploy/k8s/*
+  workflow_dispatch:
+
+env:
+  resource-group: your-azure-resource-group
+  cluster-name: your-aks-cluster-name
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Deploy to Kubernetes
+        uses: ./.github/actions/deploy-aks
+        with:
+          creds: ${{ secrets.AKS_CREDENTIALS }}
+          resource-group: ${{ env.resource-group }}
+          cluster-name: ${{ env.cluster-name }}
+          namespace: default
+          manifests: |
+            apps/safe-settings/deploy/k8s/deployment.yaml
+            apps/safe-settings/deploy/k8s/service.yaml
+            apps/safe-settings/deploy/k8s/ingress.yaml

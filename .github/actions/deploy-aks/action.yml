@@ -1,0 +1,38 @@
+---
+name: Deploy to AKS cluster
+description: Deploys K8s resources with specified image to an AKS cluster
+
+inputs:
+  creds:
+    description: Azure credentials for AKS
+    required: true
+  resource-group:
+    description: Azure Resource Group
+    required: true
+  cluster-name:
+    description: AKS cluster name
+    required: true
+  namespace:
+    description: K8s namespace
+    required: true
+  manifests:
+    description: K8s resource files
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: AKS Cluster Login
+      uses: Azure/aks-set-context@v1
+      with:
+        creds: ${{ inputs.creds }}
+        cluster-name: ${{ inputs.cluster-name }}
+        resource-group: ${{ inputs.resource-group }}
+
+    - name: Deploy
+      uses: Azure/k8s-deploy@v1.4
+      with:
+        namespace: ${{ inputs.namespace }}
+        images: ${{ inputs.images }}
+        manifests: ${{ inputs.manifests }}
+        kubectl-version: latest

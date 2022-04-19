@@ -1,0 +1,25 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: safe-settings
+  # Your ingress controller
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  # Your TLS config
+  tls:
+    - secretName: tls-wildcard.public-acme.io
+      hosts:
+        - safe-settings.public-acme.io
+  rules:
+    - host: safe-settings.public-acme.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: safe-settings
+                port:
+                  number: 8888
