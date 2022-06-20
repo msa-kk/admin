@@ -101,52 +101,52 @@ labels:
     oldname: Help Wanted
     color: '#326699'
 
-milestones:
-# Milestones: define milestones for Issues and Pull Requests
-  - title: milestone-title
-    description: milestone-description
-    # The state of the milestone. Either `open` or `closed`
-    state: open
+# milestones:
+# # Milestones: define milestones for Issues and Pull Requests
+#   - title: milestone-title
+#     description: milestone-description
+#     # The state of the milestone. Either `open` or `closed`
+#     state: open
 
-collaborators:
-# Collaborators: give specific users access to any repository.
-# See https://docs.github.com/en/rest/reference/collaborators#add-a-repository-collaborator for available options
-- username: regpaco
-  permission: push
-# The permission to grant the collaborator. Can be one of:
-# * `pull` - can pull, but not push to or administer this repository.
-# * `push` - can pull and push, but not administer this repository.
-# * `admin` - can pull, push and administer this repository.
-- username: beetlejuice
-  permission: pull
-# You can exclude a list of repos for this collaborator and all repos except these repos would have this collaborator
-  exclude:
-  - actions-demo
+# collaborators:
+# # Collaborators: give specific users access to any repository.
+# # See https://docs.github.com/en/rest/reference/collaborators#add-a-repository-collaborator for available options
+# - username: regpaco
+#   permission: push
+# # The permission to grant the collaborator. Can be one of:
+# # * `pull` - can pull, but not push to or administer this repository.
+# # * `push` - can pull and push, but not administer this repository.
+# # * `admin` - can pull, push and administer this repository.
+# - username: beetlejuice
+#   permission: pull
+# # You can exclude a list of repos for this collaborator and all repos except these repos would have this collaborator
+#   exclude:
+#   - actions-demo
 
-- username: thor
-  permission: push
-# You can include a list of repos for this collaborator and only those repos would have this collaborator
-  include:
-  - actions-demo
-  - another-repo
+# - username: thor
+#   permission: push
+# # You can include a list of repos for this collaborator and only those repos would have this collaborator
+#   include:
+#   - actions-demo
+#   - another-repo
 
 # See https://docs.github.com/en/rest/reference/teams#create-a-team for available options
-teams:
-  - name: core
-    # The permission to grant the team. Can be one of:
-    # * `pull` - can pull, but not push to or administer this repository.
-    # * `push` - can pull and push, but not administer this repository.
-    # * `admin` - can pull, push and administer this repository.
-    permission: admin
-  - name: docss
-    permission: push
-  - name: docs
-    permission: pull
-  # Visibility is only honored when the team is created not for existing teams.
-  # It can be either secret (default) or closed (visible to all members of the org)
-  - name: globalteam
-    permission: push
-    visibility: closed
+# teams:
+#   - name: core
+#     # The permission to grant the team. Can be one of:
+#     # * `pull` - can pull, but not push to or administer this repository.
+#     # * `push` - can pull and push, but not administer this repository.
+#     # * `admin` - can pull, push and administer this repository.
+#     permission: admin
+#   - name: docss
+#     permission: push
+#   - name: docs
+#     permission: pull
+#   # Visibility is only honored when the team is created not for existing teams.
+#   # It can be either secret (default) or closed (visible to all members of the org)
+#   - name: globalteam
+#     permission: push
+#     visibility: closed
 
 branches:
   # If the name of the branch value is specified as `default`, then the app will create a branch protection rule to apply against the default branch in the repo
@@ -163,22 +163,22 @@ branches:
         # Blocks merge until code owners have reviewed.
         require_code_owner_reviews: true
         # Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories.
-        dismissal_restrictions:
-          users: []
-          teams: []
+#         dismissal_restrictions:
+#           users: []
+#           teams: []
       # Required. Require status checks to pass before merging. Set to null to disable
-      required_status_checks:
+#       required_status_checks:
         # Required. Require branches to be up to date before merging.
-        strict: true
+#         strict: true
         # Required. The list of status checks to require in order to merge into this branch
-        contexts: []
+#         contexts: []
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
       enforce_admins: true
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
-      restrictions:
-        apps: []
-        users: []
-        teams: []
+#       restrictions:
+#         apps: []
+#         users: []
+#         teams: []
         
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*' 
