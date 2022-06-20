@@ -177,8 +177,8 @@ branches:
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions:
         apps: []
-        users: []
-        teams: []
+#         users: []
+#         teams: []
         
 validator:
   #pattern: '[a-zA-Z0-9_-]+_[a-zA-Z0-9_-]+.*' 
