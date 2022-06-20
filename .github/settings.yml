@@ -42,7 +42,7 @@ repository:
   has_wiki: true
   
   # The default branch for this repository.
-  default_branch: default
+  default_branch: master
   
   # Desired language or platform [.gitignore template](https://github.com/github/gitignore) 
   # to apply. Use the name of the template without the extension. 
