@@ -2,7 +2,7 @@
 
 # List of repos that belong to the suborg
 suborgrepos:
- - test*
+ - common_utils*
 # You can use Glob patterns
 
 #suborgteams:
