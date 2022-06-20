@@ -91,18 +91,18 @@ labels:
 
   - name: feature
 #     If including a `#`, make sure to wrap it with quotes!
-   color: '#336699'
-   description: New functionality.
+    color: '#336699'
+    description: New functionality.
 
   - name: first-timers-only
 #     include the old name to rename an existing label
-   oldname: Help Wanted
-   color: '#326699'
+    oldname: Help Wanted
+    color: '#326699'
 
   - name: new-label
 #     include the old name to rename an existing label
-   oldname: Help Wanted
-   color: '#326699'
+    oldname: Help Wanted
+    color: '#326699'
 
 #collaborators:
 # Collaborators: give specific users access to any repository.
