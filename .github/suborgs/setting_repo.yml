@@ -32,7 +32,7 @@ repository:
   
   # Can be public or private. If your organization is associated with an enterprise account using 
   # GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, visibility can also be internal. 
-  visibility: private
+  visibility: public
   
   # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
