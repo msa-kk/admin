@@ -10,3 +10,5 @@
 4. Deploy the `safe-settings` app on k8s with the [deploy workflow](.github\workflows\deploy-safe-settings.yml).
 
 [k8s-deployment]: apps\safe-settings\deploy\k8s\deployment.yaml
+
+
